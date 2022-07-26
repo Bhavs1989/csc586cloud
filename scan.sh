@@ -1,5 +1,6 @@
 #!/bin/bash
+sudo apt install gawk
 sudo apt install whois
 
 ls /var/log
-for i in $(sudo cat /var/log/auth.log | grep "error\|invalid\|closed\|Invalid user" | awk 'match($0, /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/) {i[substr($0,RSTART,RLENGTH)]=1}END{for(ip in i){printf("%s\n", ip)}} {print $1 $2}'); do echo "$i $(whois $i | grep -m1 country)"; done | column -t
+for i in $(sudo cat /var/log/auth.log | grep "error\|invalid\|closed\|Invalid user" | gawk  '{match($0,/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/,a);split(a[0],b,".")} b[1]<=255&& b[2]<=255 && b[3]<=255 && b[4]<=255 &&length(a[0]){print $1,$2, a[0]}'); do echo "$i $(whois $i | grep -m1 country | gawk '{print $1 $2}')"; done
