@@ -8,5 +8,5 @@ sudo apt install -y nfs-kernel-server
 prefixForIP = "192.168.1."
 link = request.LAN("lan")
 
-
+sudo mkdir /var/webserver_log
 
