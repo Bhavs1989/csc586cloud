@@ -1,0 +1,3 @@
+crontab -e
+
+*/5 * * * * /scan.sh
