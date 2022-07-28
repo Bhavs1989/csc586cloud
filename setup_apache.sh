@@ -9,4 +9,4 @@ prefixForIP = "192.168.1."
 link = request.LAN("lan")
 
 sudo mkdir /var/webserver_log
-sudo mount 192.168.1.1:/var/webserver_log webserver_monitor/
+sudo mount 192.168.1.1:/var/webserver_log var/webserver_monitor/
