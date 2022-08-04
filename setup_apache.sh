@@ -5,7 +5,7 @@ sudo apt update
 sudo apt install -y apache2
 sudo apt install -y nfs-kernel-server
 
-sudo systemctl start apache2.service
+sudo systemctl status apache2.service
 
 prefixForIP = "192.168.1."
 link = request.LAN("lan")
