@@ -1,3 +1,6 @@
 crontab -e
 
 0 * * * * /monitor.sh
+
+MAILTO="bhavanaprabhakar@gmail.com" 
+
